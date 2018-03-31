@@ -2,22 +2,6 @@
 
 using namespace std;
 
-int Wygrana(int x, int y)
-{
-    while(x!=y)
-        {
-            if(x>y)
-            {
-                x=x-y;
-            }
-            if (y>x)
-            {
-                y=y-x;
-            }
-        }
-    return x+y;
-}
-
 int main()
 {
     int t;
@@ -25,9 +9,14 @@ int main()
     cin>>t;
     for (int i=0; i<t; i++)
     {
-        int a,b;
+        long int a,b;
         cin>>a>>b;
-        tab[i]=Wygrana(a,b);
+        while (a!=b)
+        {
+            if (a>b) a=a-b;
+            else b=b-a;
+        }
+        tab[i]=b+a;
     }
     for (int i=0; i<t; i++)
     {
